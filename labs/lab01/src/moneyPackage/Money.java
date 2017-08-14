@@ -3,6 +3,7 @@ package moneyPackage;
 public class Money {
 	public	Money(int amount, String currency)	{
 		this._currency = new Currency(currency);
+		assert currency.length() == 3 : "Currency needs to have length of 3.";
 		this.setAmount(amount);
 	}
 
