@@ -22,7 +22,7 @@ public class MoneyTest_4 {
 	@Test
 	public void WhenAddingSameCurrencyMoneysRetunsAMoneyWithSummedAmoutsAndCurrency() {
 		
-		this.addResult = this._36USDm.add(_52USDm);
+		this.addResult = (Money) this._36USDm.add(_52USDm);
 		assertEquals(addResult.getAmount(),88);
 		assertEquals(addResult.getCurrency().getCurrencyStr(),"USD");	
 	}

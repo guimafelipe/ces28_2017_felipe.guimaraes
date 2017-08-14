@@ -1,20 +1,27 @@
 package moneyPackage;
 
-public class Money {
+public class Money implements MoneyInterface{
 	public	Money(int amount, String currency)	{
 		this._currency = new Currency(currency);
-		assert currency.length() == 3 : "Currency needs to have length of 3.";
+		//assert currency.length() == 3 : "Currency needs to have length of 3.";
 		this.setAmount(amount);
 	}
 
-	public Money add(Money m) { 
-	
-		Money money = new Money(0,"");
-
-		money.setAmount(this.getAmount() + m.getAmount()); 	
-		money.getCurrency().setCurrencyStr(this._currency.getCurrencyStr());
+	public MoneyInterface add(Money m) { 
 		
-		return	money;
+		if(m.getCurrency().equals(this.getCurrency())) {
+			Money money = new Money(0,"");
+	
+			money.setAmount(this.getAmount() + m.getAmount()); 	
+			money.getCurrency().setCurrencyStr(this._currency.getCurrencyStr());
+			
+			return	money;
+		} else {
+			MoneyBag mb = new MoneyBag();
+			mb.add(this);
+			mb.add(m);
+			return mb;
+		}
 	}
 
 	public int getAmount() {
