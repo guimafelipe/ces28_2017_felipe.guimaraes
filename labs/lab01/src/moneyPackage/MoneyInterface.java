@@ -4,6 +4,6 @@ package moneyPackage;
 
 public interface MoneyInterface {
 	
-	public Object add(Money money);
+	public MoneyInterface add(Money money);
 	
 }

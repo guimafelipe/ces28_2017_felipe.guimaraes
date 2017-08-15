@@ -14,10 +14,16 @@ public class Currency {
 		this._currency = currency;
 	}
 	
-	public boolean equals(Currency currency) {
-		if(this.getCurrencyStr().equals(currency.getCurrencyStr()))
+	@Override
+	public boolean equals(Object currency) {
+		if(this.getCurrencyStr().equals(((Currency) currency).getCurrencyStr()))
 			return true;
 		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		return _currency.hashCode();
 	}
 	
 	private String _currency;

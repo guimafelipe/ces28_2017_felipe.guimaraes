@@ -1,13 +1,20 @@
 package moneyPackage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MoneyBag implements MoneyInterface{
 	
 	private ArrayList<Money> _bag;
+	private Map<Currency, Integer> _conversion;
 	
 	public MoneyBag(){
-		_bag = new ArrayList<Money>();		
+		_bag = new ArrayList<Money>();
+		_conversion = new HashMap<Currency, Integer>();
+		_conversion.put(new Currency("USD"), new Integer(3));
+		_conversion.put(new Currency("CHF"), new Integer(2));
+		_conversion.put(new Currency("BRL"), new Integer(1));
 	}
 	
 	//Item 9 do roteiro
@@ -56,4 +63,24 @@ public class MoneyBag implements MoneyInterface{
 		}
 		return resp;
 	}
+	
+	public int checarConversion(Currency currency) {
+		
+		if(_conversion.containsKey(currency)) {
+			return _conversion.get(currency).intValue();
+		}
+		
+		return -1;
+	}
+	
+	public int valorEmReais() {
+		int result = 0;
+		
+		for(int i = 0; i < _bag.size(); i++) {
+			if(_conversion.containsKey(_bag.get(i).getCurrency()))
+				result += _conversion.get(_bag.get(i).getCurrency()).intValue()*_bag.get(i).getAmount();
+		}
+		return result;
+	}
+	
 }
