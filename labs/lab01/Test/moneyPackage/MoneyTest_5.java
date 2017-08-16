@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
+/*Testes referentes às funcionalidades básicas da classe Money Bag*/
+
 public class MoneyTest_5 {
 	
 	private static MoneyBag mb1;

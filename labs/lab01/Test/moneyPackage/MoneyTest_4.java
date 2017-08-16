@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-/*Teste referente ao passo 6 do processo*/
+/*Teste referente ao passo 6 do processo do roteiro*/
 public class MoneyTest_4 {
 
 	private Money _36USDm;

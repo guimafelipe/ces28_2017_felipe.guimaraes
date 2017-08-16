@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-/*Teste referente ao passo 2 do processo*/
+/*Teste referente ao passo 2 do processo do roteiro*/
 public class MoneyTest_1 {
 
 	private Money _36USDm = new Money();

@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/*Testes referentes à integração entre as classes Money e MoneyBag, além da função de conversão de valores para BRL.*/
 public class MoneyTest_6 {
 	Money m1;
 	Money m2;
