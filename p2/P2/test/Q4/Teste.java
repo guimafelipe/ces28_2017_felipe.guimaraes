@@ -13,6 +13,7 @@ import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Matchers.anyInt;
 
 public class Teste {
 	
@@ -31,7 +32,7 @@ public class Teste {
 		despesas.add(despesa2);
 		relatorio = new RelatorioDespesas(calculadoraspy);
 		relatorio.ImprimirRelatorio(despesas.iterator());
-		verify(calculadoraspy).imprime(64f);	
+		verify(calculadoraspy).imprime(64f, 1);	
 	}
 	
 	

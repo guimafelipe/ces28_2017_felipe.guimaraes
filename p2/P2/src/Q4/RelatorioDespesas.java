@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class RelatorioDespesas {
-	
+	 private final int LASER = 1;
+	 private final int INKJAT = 2;
+	 private final int OLDONE = 3;
+	   
 	Calculadora calculadora;
-	
+	int tipoImpressora = LASER;
 	public RelatorioDespesas(Calculadora calculadora){
 		this.calculadora = calculadora;
 	}
@@ -23,6 +26,6 @@ public class RelatorioDespesas {
 			totalDespesa+= despesa;
 		}
 		
-		calculadora.imprime(totalDespesa);
+		calculadora.imprime(totalDespesa, tipoImpressora);
 	}
 }

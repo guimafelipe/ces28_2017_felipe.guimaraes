@@ -1,6 +1,6 @@
 package Q4;
 
-public class Impressora implements IImpressora{
+public class ImpressoraLaser implements IImpressora{
 	public void Imprimir(String conteudo) {
 		if (conteudo==null) {
 			throw new IllegalArgumentException("conteudo nulo");
